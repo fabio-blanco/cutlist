@@ -135,6 +135,16 @@ function tabberObj(argsObj)
   Methods for tabberObj
   --------------------------------------------------*/
 
+// This is useful to debug javascript inside sketchup
+function log(text){
+  var pTag = document.createElement("p");
+  var node = document.createTextNode("" + text);
+  pTag.appendChild(node);
+
+  var element = document.getElementById("logDiv");
+  element.appendChild(pTag);
+}
+
 
 tabberObj.prototype.init = function(e)
 {
@@ -171,6 +181,11 @@ tabberObj.prototype.init = function(e)
   /* Loop through an array of all the child nodes within our tabber element. */
   childNodes = e.childNodes;
   for(i=0; i < childNodes.length; i++) {
+
+    //workaround to overcome comment tag bug on wine gecko
+    if (childNodes[i].tagName === "!") {
+      continue;
+    }
 
     /* Find the nodes where class="tabbertab" */
     if(childNodes[i].className &&
@@ -462,7 +477,7 @@ function tabberAutomatic(tabberArgs)
   /* First get an array of all DIV elements and loop through them */
   divs = document.getElementsByTagName("div");
   for (i=0; i < divs.length; i++) {
-    
+
     /* Is this DIV the correct class? */
     if (divs[i].className &&
 	divs[i].className.match(tempObj.REclassMain)) {

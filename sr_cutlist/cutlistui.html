@@ -4,7 +4,6 @@
     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
     <!--<meta http-equiv="x-ua-compatible" content="IE=8"> -->
     <title>CutList 4.1</title>
-    <script type="text/javascript" src="tabber.js"></script>
     <link rel="stylesheet" href="example.css" TYPE="text/css" MEDIA="screen">
 
     <script>
@@ -855,10 +854,13 @@
       </tbody>
     </table>
 
-    <script>
-      <!-- initialise table options since having it set checked doesn't seem to initialize the value field the same as an onclick event-->
+    <div id="logDiv"></div>
+
+    <script type="text/javascript" src="tabber.js"></script>
+    <script type="text/javascript" >
+      // initialise table options since having it set checked doesn't seem to initialize the value field the same as an onclick event
       initRadioElementValues();
-      <!--selectCutListTableOption("compactList"); -->
+      //selectCutListTableOption("compactList");
       //selectBoardWidthOption("board6w");
       //selectBoardLengthOption("board8l");
       //selectSheetWidthOption("sheet4w");
@@ -867,7 +869,6 @@
       initBooleanElementValues();
       initTextElementValues();
       initSelectElementValues();
-
     </script>
 
   <!-- body end -->
