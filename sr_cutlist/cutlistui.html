@@ -15,9 +15,22 @@
 
       var cookieExpiry=3650; //  10 years
 
+      function getRadioValue(inputName) {
+        var radios = document.getElementsByName(inputName);
+
+        for (var i = 0; i < radios.length; i++) {
+          if(radios[i].checked ) {
+            return radios[i].value;
+          }
+        }
+
+        return false;
+      }
+
       function get_current_options(outFileName,clpFileName){
         var res = "";
-          res = res + document.getElementById('compactListOption').value;
+          //res = res + document.getElementById('compactListOption').value;
+          res = getRadioValue('compactList');
           res = res + ',' + document.getElementById('nominalOut').checked;
           res = res + ',' + document.getElementById('linearFeet').checked;
           res = res + ',' + document.getElementById('outputFileUsed').checked;
@@ -38,10 +51,14 @@
           res = res + ',' + document.getElementById('tenq').checked;
           res = res + ',' + escape(document.getElementById('nominalMargin').value);
           res = res + ',' + document.getElementById('layout').checked;
-          res = res + ',' + document.getElementById('boardWidthOptions').value;
-          res = res + ',' + document.getElementById('boardLengthOptions').value;
-          res = res + ',' + document.getElementById('sheetWidthOptions').value;
-          res = res + ',' + document.getElementById('sheetLengthOptions').value;
+          //res = res + ',' + document.getElementById('boardWidthOptions').value;
+          res = res + ',' + getRadioValue('boardWidthOption');
+          //res = res + ',' + document.getElementById('boardLengthOptions').value;
+          res = res + ',' + getRadioValue('boardLengthOption');
+          //res = res + ',' + document.getElementById('sheetWidthOptions').value;
+          res = res + ',' + getRadioValue('sheetWidthOption');
+          //res = res + ',' + document.getElementById('sheetLengthOptions').value;
+          res = res + ',' + getRadioValue('sheetLengthOption');
           res = res + ',' + document.getElementById('nominalWidth').checked;
           res = res + ',' + document.getElementById('kerfSize').value;
           res = res + ',' + document.getElementById('splitWideParts').checked;
