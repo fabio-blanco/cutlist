@@ -24,12 +24,13 @@ or
 
 There were made some efort in order to allow the use of cutlist installed in sketchup 2017 under wine.
 
-Please see [WineHQ skethup page](https://appdb.winehq.org/objectManager.php?sClass=version&iId=34500) for instruciont on wine installation.
+Please see [WineHQ sketchup page](https://appdb.winehq.org/objectManager.php?sClass=version&iId=34500) for instruciont on sketchup 2017 
+installation on Wine.
 
 ## Installation on sketchup under wine
 
 Download this source code by git clone or whatever means you think it is better, then zip it's content in a file
-and change it's extension to .rvz. 
+and change it's extension to .rbz. 
 
 After a successful installation of sketchup 2017 on wine, open the extension manager (Window > Extension manager)
 and click on install extension then select the .rbz file.
